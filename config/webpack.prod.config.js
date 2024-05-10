@@ -1,9 +1,9 @@
-const path = require('path');
-const { merge } = require('webpack-merge');
-const { CleanWebpackPlugin } = require('clean-webpack-plugin');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-// const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const webpackConfigBase = require('./webpack.base.config');
+const path = require('path')
+const { merge } = require('webpack-merge')
+const { CleanWebpackPlugin } = require('clean-webpack-plugin')
+const HtmlWebpackPlugin = require('html-webpack-plugin')
+const MiniCssExtractPlugin = require('mini-css-extract-plugin')
+const webpackConfigBase = require('./webpack.base.config')
 
 /**
  * css和js分离打包的作用：
@@ -18,9 +18,9 @@ const webpackConfigProd = {
         new CleanWebpackPlugin({
             protectWebpackAssets: true,
         }),
-        // new MiniCssExtractPlugin({ // 用来进行打包时分割css和js文件的插件
-        //     filename: '[name].[fullhash:4].css',
-        // }),
+        new MiniCssExtractPlugin({ // 用来进行打包时分割css和js文件的插件
+            filename: '[name].[fullhash:4].css',
+        }),
         new HtmlWebpackPlugin({
             inject: 'body',
             title: 'React App',
@@ -28,7 +28,7 @@ const webpackConfigProd = {
             template: path.join(__dirname, '../src/index.html'),
         }),
     ],
-};
+}
 
 // 将两个配置文件合并后导出
-module.exports = merge(webpackConfigBase, webpackConfigProd);
+module.exports = merge(webpackConfigBase, webpackConfigProd)

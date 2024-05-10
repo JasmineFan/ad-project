@@ -1,10 +1,10 @@
 // webpack 开发和生产环境下的相同配置项
 
-const path = require('path');
-// const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const path = require('path')
+const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 
 // 判断当前的打包环境是开发环境还是生产环境
-const devMode = process.env.NODE_ENV !== 'production';
+const devMode = process.env.NODE_ENV !== 'production'
 
 const webpackBaseConfig = {
 
@@ -33,15 +33,20 @@ const webpackBaseConfig = {
                 test: /\.(sc|c)ss/, // 处理scss / css文件
                 // 如果是dev方式就使用style-loader否则就使用分离打包方式
                 use: [
-                    // devMode ? 'style-loader' : MiniCssExtractPlugin.loader,
-                    'style-loader',
+                    devMode ? 'style-loader' : MiniCssExtractPlugin.loader,
                     'css-loader',
                     'sass-loader',
                 ],
             },
             {
                 test: /\.tsx?$/,
-                use: 'ts-loader',
+                use: {
+                    loader: 'ts-loader',
+                    options: {
+                        transpileOnly: true,
+                    },
+                },
+
             },
             // {
             //     test: /\.(jpg|png|jpe?g|gif|svg)(\?.*)?$/i,
@@ -64,6 +69,6 @@ const webpackBaseConfig = {
         ],
     },
 
-};
+}
 
-module.exports = webpackBaseConfig;
+module.exports = webpackBaseConfig

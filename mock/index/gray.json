@@ -1,0 +1,9 @@
+{
+    "code": 0,
+    "message": "请求成功",
+    "data": {
+        "id": 1,
+        "name": "zhangsan",
+        "time": "2021-11-11"
+    }
+}
