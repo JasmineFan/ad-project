@@ -39,10 +39,10 @@ const webpackBaseConfig = {
                     'sass-loader',
                 ],
             },
-            // {
-            //     test: /\.tsx?$/,
-            //     use: 'ts-loader',
-            // },
+            {
+                test: /\.tsx?$/,
+                use: 'ts-loader',
+            },
             // {
             //     test: /\.(jpg|png|jpe?g|gif|svg)(\?.*)?$/i,
             //     use: [

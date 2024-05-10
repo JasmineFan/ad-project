@@ -1,0 +1,104 @@
+{
+    "env": {
+        "browser": true
+    },
+    "extends": [
+        "airbnb"
+    ],
+    "parser": "@typescript-eslint/parser",
+    "plugins": [
+        "react",
+        "@typescript-eslint"
+    ],
+    "rules": {
+        "react/prefer-stateless-function": "off",
+        "react/jsx-indent": [
+            "error",
+            4
+        ],
+        "indent": [
+            "error",
+            4
+        ],
+        "semi": ["error", "never"],
+        "linebreak-style": "off",
+        "react/jsx-filename-extension": [
+            "error",
+            {
+                "extensions": [
+                    ".js",
+                    ".jsx",
+                    ".ts",
+                    ".tsx"
+                ]
+            }
+        ],
+        "no-unused-vars": "warn",
+        "no-use-before-define": "off",
+        "react/self-closing-comp": "off",
+        "import/no-unresolved": [
+            "error",
+            {
+                "ignore": [
+                    ".png$",
+                    ".webp$",
+                    ".jpg$"
+                ]
+            }
+        ],
+        "import/extensions": [
+            "error",
+            "never",
+            {
+                "svg": "always"
+            }
+        ],
+        "import/no-extraneous-dependencies": "off",
+        "no-console": "off",
+        "no-plusplus": "off",
+        "prefer-destructuring": "off",
+        "react/jsx-indent-props": "off",
+        "jsx-a11y/no-static-element-interactions": "off",
+        "jsx-a11y/click-events-have-key-events": "off",
+        "max-len": "off",
+        "react/state-in-constructor": "off",
+        "react/jsx-props-no-spreading": "off",
+        "react/destructuring-assignment": "off"
+    },
+    "settings": {
+        "import/resolver": {
+            "alias": {
+                "map": [
+                    [
+                        "pages",
+                        "./src/pages"
+                    ],
+                    [
+                        "@utils",
+                        "./src/utils"
+                    ],
+                    [
+                        "@components",
+                        "./src/components"
+                    ],
+                    [
+                        "common",
+                        "./src/common"
+                    ],
+                    [
+                        "context",
+                        "./src/context"
+                    ]
+                ],
+                "extensions": [
+                    ".ts",
+                    ".tsx",
+                    ".js",
+                    ".jsx",
+                    ".json",
+                    ".d.ts"
+                ]
+            }
+        }
+    }
+}
